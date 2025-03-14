@@ -8,8 +8,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final ValueNotifier _counter = ValueNotifier(0);
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: ValueListenableBuilder(
+          valueListenable: _counter,
+          builder: (context, value, child) {
+            return Text("Button was pressed this many times: $value");
+          },
+        ),
+      ),
+    );
   }
 }
