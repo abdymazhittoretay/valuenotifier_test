@@ -20,6 +20,12 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _counter.value++;
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
